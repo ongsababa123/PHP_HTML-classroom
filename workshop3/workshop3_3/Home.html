@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+
+    <style type="text/css">
+        .target {
+         width:50%;
+          height:200px;
+          border:solid black 1px;
+        }
+        .target > div {
+           display:none;
+        }
+        .target > div:target{
+           display:block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.youtube.com/">Youtube link</a><br />
+    <br />
+    <a href="Local.html"><button>Local</button><br /></a>
+    <br />
+
+    <a href="#m1">m1</a><br>
+    <a href="#m2">m2</a><br>
+    <a href="#m3">m3</a><br>
+    <a href="#m4">m4</a><br>
+        <div class="target">
+            <div id="m1">
+                สวัสดีครับ
+            </div>
+            <div id="m2">
+                <img src="https://static.posttoday.com/media/content/2017/09/13/25211FFB9101410294DA83A0F99AE423.jpg" width="39%">
+            </div>
+            <div id="m3">
+                <iframe width="560" height="200" src="https://www.youtube.com/embed/NwFVSclD_uc"></iframe>
+            </div>
+            <div id="m4">
+                สวัสดีครับ
+            </div>
+        </div>
+
+</body>
+
+</html>

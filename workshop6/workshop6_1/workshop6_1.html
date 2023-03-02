@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write("<p>Learn the basic programming Javascript</p>");
+    </script>
+    <div id="txt">test</div><br>
+    <button onclick="starttime()">Start</button>
+    <button onclick="myStopFunction()">Stop</button>
+    <script>
+        let timer_on = 0;
+        function starttime() {
+            const today = new Date();
+            h = today.getHours();
+            m = today.getMinutes();
+            s = today.getSeconds();
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            timer_on = setTimeout(starttime, 1000);
+        }
+        function myStopFunction() {
+            clearTimeout(timer_on);
+        }
+    </script>
+</body>
+
+</html>

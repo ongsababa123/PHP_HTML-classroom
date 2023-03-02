@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+
+    <style type="text/css">
+      .target {
+       width:50%;
+        height:200px;
+        border:solid black 1px;
+      }
+      .target > div {
+         display:none;
+      }
+      .target > div:target{
+         display:block;
+      }
+  </style>
+
+  </head>
+
+  <body>
+    <a href="#m1">m1</a><br />
+    <a href="#m2">m2</a><br />
+    <a href="#m3">m3</a><br />
+    <div class="target">
+      <div id="m1">nopphagaw message1<br />hello</div>
+      <div id="m2">nopphagaw message2<br />hi</div>
+      <div id="m3">
+        <h4>nopphagaw message3</h4>
+        Hey Boy
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="30" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: powderblue;
+      }
+      h1 {
+        color: red;
+      }
+      p {
+        color: blue;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    <h1>introduce HTML Workshop</h1>
+    <p>How to create a modern, responsive website with HTML Workshop</p>
+    ทดสอบ
+
+    <div style="text-align: center">
+      <button onclick="playPause()">Play/Pause</button>
+      <button onclick="makeBig()">Big</button>
+      <button onclick="makeSmall()">Small</button>
+      <button onclick="makeNormal()">Normal</button>
+      <br /><br />
+      <video id="video1" width="420">
+        <source src="test.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <script>
+        var myVideo = document.getElementById("video1");
+        var size = 0;
+        function playPause() {
+         if (myVideo.paused)
+          myVideo.play();
+         else
+          myVideo.pause();
+        }
+        function makeBig() {
+         size = size + 50;
+         myVideo.width = size;
+        }
+        function makeSmall() {
+            size = size - 50;
+         myVideo.width = size;
+        }
+        function makeNormal() {
+         myVideo.width = 420;
+        }
+        </script>
+
+  </body>
+</html>
+
+

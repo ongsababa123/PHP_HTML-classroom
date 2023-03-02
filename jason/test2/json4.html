@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function loadJSON(){
+          var xObj = new XMLHttpRequest();
+          xObj.open('GET', 'data.json', true);
+          xObj.send();
+          xObj.onreadystatechange = function(){
+            if(xObj.readyState == 4 && xObj.status == 200){
+              alert(xObj.responseText);
+             data = JSON.parse(xObj.responseText);
+            data[1].name;
+            }
+          }
+        function init(){
+          loadJSON();
+        init();
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <link rel="stylesheet" href="css.css">
+  <div class="container" id="mydiv"></div>
+  <table border='1' width="95%">
+    <tr>
+    <tr>
+      <th>ลำดับ</th>
+      <th>รายการ</th>
+      <th>จำนวน</th>
+      <th>ราคา</th>
+    </tr>
+    </tr>
+    <tbody id="table_id"></tbody>
+    <tr id="tr1">
+      <!-- <td colspan="5">Grand Total</td> -->
+    </tr>
+  </table>
+  <script src="script.js"></script>
+  <script>
+    var mydiv = document.getElementById("mydiv");
+
+    gen_menu();
+    function gen_menu() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "data.json", true);
+      xhttp.send();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var data = this.responseText;
+          var obj = JSON.parse(data, true);
+          for (var i = 0; i < 3; i++) {
+            if (i == 0) {
+              mydiv.innerHTML += doit(obj[i]["pid"], obj[i]["title"], obj[i]["imgsrc"], obj[i]["price"]);
+            } else if (i == 1) {
+              mydiv.innerHTML += doit(obj[i]["pid"], obj[i]["title"], obj[i]["imgsrc"], obj[i]["price"]);
+            }
+            else {
+              mydiv.innerHTML += doit(obj[i]["pid"], obj[i]["title"], obj[i]["imgsrc"], obj[i]["price"]);
+            }
+          }
+        }
+
+      }
+    }
+    function showStateClick() {
+      var sumPrice = 0;
+      var count = 0;
+      var txt = "";
+      const checkbox = document.getElementsByName("checkbox");
+      const quantity = document.getElementsByName("quantity");
+      const hidprice_hid_price = document.getElementsByName("price_hid");
+      for (var i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked) {
+          count++;
+          var tmp = parseInt(quantity[i].value);
+          var priceTmp = hidprice_hid_price[i].value;
+          var pos = priceTmp.indexOf("$");
+          var text = priceTmp.substring(pos + 1, priceTmp.length);
+          text = text.trim();
+          var priceNum = parseInt(text);
+          var sum = priceNum * tmp;
+          txt += "<tr><td>" + count + "</td><td>" + checkbox[i].value + "</td><td>" + tmp + "</td><td>$ " + sum + "</td></tr>";
+          sumPrice += sum;
+        }
+      }
+      var tr1 = document.getElementById("tr1");
+      var txt1 = "<td>Grand total $ " + sumPrice + "</td>";
+      // var grandTotal = document.getElementById("table_id_total");
+      var output = document.getElementById("table_id");
+      output.innerHTML = txt;
+      tr1.colspan = "8";
+      tr1.innerHTML = txt1;
+    }
+      // doit("R1","ข้าวผัดอเมริกัน","https://source.unsplash.com/600x400/?recipe","$ 5.50");
+      // doit("R2","ผัดไทยกุ้งสด","https://source.unsplash.com/600x400/?recipe","$ 5.50");
+      // doit("R3","บาร์บิคิวทะเล","https://source.unsplash.com/600x400/?recipe","$ 5.50");
+  </script>
+</body>
+
+</html>

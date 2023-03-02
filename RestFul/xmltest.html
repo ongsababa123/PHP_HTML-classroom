@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select name="opt" id = "opt" onchange="doit()">
+        <option value="GET">GET</option>
+        <option value="PUT">PUT</option>
+        <option value="POST">POST</option>
+        <option value="DELETE">DELETE</option>GET</option>
+    </select>
+
+    <div id="content"></div>
+
+    <script>
+        function doit() {
+            method = document.getElementById('opt').value;
+            var xhr = new XMLHttpRequest();
+            xhr.open(method, "xmltest.php?id=3", true);
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = this.responseText;
+                    document.getElementById("content").innerHTML = data;
+                }
+            }
+            xhr.send("name=1&surname=2");
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>workshop 6_2</title>
+
+    <style type="text/css">
+        #square {
+            position: absolute;
+            top: 150px;
+            left: 100px;
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+            border-radius: 25px;
+            padding: 10px;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Positioning Elements</h1>
+    <form action="" name="form1">
+        <div id="buttons">
+            <input type="button" name="left" value="Left" onclick="pos(-1,0);" />
+            <input type="button" name="right" value="right" onclick="pos(1,0);" />
+            <input type="button" name="up" value="up" onclick="pos(0,-1);" />
+            <input type="button" name="down" value="down" onclick="pos(0,1);" />
+            <input type="button" name="hide" value="hide" onclick="display(1);" />
+            <input type="button" name="show" value="show" onclick="display(0);" /> 
+        </div>
+    </form>
+    <hr>
+    <div id="square">
+        <p>This square is an absolutely positioned
+            layer that you can move using the buttons above.</p>
+    </div>
+    <script>
+        var x = 100, y = 150;
+        function pos(dx, dy) {
+            x += 10 * dx;
+            y += 10 * dy;
+            obj = document.getElementById("square");
+            obj.style.top = y + "px";
+            obj.style.left = x + "px";
+            if(num == 1){
+                obj.style.display="none";
+            }else{
+                obj.style.display="block";
+            }
+        }
+        function display(num) {
+            obj = document.getElementById("square");
+            if(num == 1){
+                obj.style.display="none";
+            }else{
+                obj.style.display="block";
+            }
+        }
+        
+            
+        
+    </script>
+</body>
+
+</html>

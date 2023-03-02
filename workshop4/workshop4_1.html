@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @media screen and (max-width: 1000px) and (min-width: 500px) {
+        div.example {
+          font-size: 50px;
+          padding: 50px;
+          border: 8px solid black;
+          background: red;
+        }
+
+        section.example {
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+      }
+
+      @media screen and (max-width: 499px) and (min-width: 0px) {
+        div.example {
+          font-size: 50px;
+          padding: 50px;
+          border: 8px solid black;
+          background: red;
+        }
+
+        section.example {
+        display: grid;
+        grid-template-columns: auto;
+      }
+      }
+
+      div {
+        background: #659494;
+        color: white;
+        height: 250px;
+        text-align: center;
+        margin: 5px;
+        padding: 5px;
+      }
+      section {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+      }
+
+      header,
+      nav,
+      footer {
+        background: #659494;
+        border-radius: 5px;
+        color: white;
+        font-family: arial, san-serif;
+        font-size: 30px;
+        text-align: center;
+        padding: 30px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>header</header>
+    <nav>nav</nav>
+
+    <section class="example">
+      <div class="example">
+        <iframe
+          height="240px"
+          src="https://www.youtube.com/embed/LsXS1tzG26A"
+        ></iframe>
+      </div>
+      <div class="example">
+        <iframe
+          height="240px"
+          src="https://www.youtube.com/embed/m9eV3Wokds4"
+        ></iframe>
+      </div>
+      <div class="example">
+        <iframe
+          height="240px"
+          src="https://www.youtube.com/embed/1sl1PxeU_wk"
+        ></iframe>
+      </div>
+      <div class="example">
+        <iframe
+          height="240px"
+          src="https://www.youtube.com/embed/RMPX_vgqQnM"
+        ></iframe>
+      </div>
+      <div class="example">
+        <iframe
+          height="240px"
+          src="https://www.youtube.com/embed/DsDqbFBrIEI"
+        ></iframe>
+      </div>
+      <div class="example">
+        <iframe
+          height="240px"
+          src="https://www.youtube.com/embed/LsXS1tzG26A"
+        ></iframe>
+      </div>
+      <div class="example">
+        <iframe
+          height="240px"
+          src="https://www.youtube.com/embed/w7-TQfoT2Nc"
+        ></iframe>
+      </div>
+      <div class="example">
+        <iframe
+          height="240px"
+          src="https://www.youtube.com/embed/59Xtikv4Saw"
+        ></iframe>
+      </div>
+    </section>
+
+    <footer>footer</footer>
+  </body>
+</html>

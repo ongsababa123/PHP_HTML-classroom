@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <h2>ระบบนักศึกษา</h2>
+    <form action="display.php" method="post">
+        ชื่อ-นามสกุล   <input type="text" id="name" name="name">
+        <br>
+        <br>
+        <label for="lern">ชื่อวิชา </label>
+        <select id="lern" name="lern">
+            <option value="PHP">PHP</option>
+            <option value="JAVA">JAVA</option>
+            <option value="C++">C++</option>
+        </select>
+        <br>
+        <br>
+        คะแนนสอบ    <input type="number" min="0" max="100" id="score" name="score">
+        <br>
+        <br>
+        น้ำหนัก    <input type="number" id="width" name="width">
+        <p><input type="submit">   <input type="reset"></p>
+    </form>
+</body>
+</html>
